@@ -1,0 +1,141 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.board {
+  width: fit-content;
+  margin: 40px auto;
+  text-align: center;
+  border: 5px solid blue;
+  padding: 10px;
+  background-image: url(/src/assets/fondoBandera.jpeg),url(/src/assets/soyDominicano.jpeg), url(/src/assets/soyDominicano.jpeg);
+  background-repeat: no-repeat;
+  background-size: 550px auto, 100px auto, 100px auto;
+  background-position-y: 60%, 10%, 10%;
+  background-position-x: 50%, 0, 100%;
+}
+
+.board h1 {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #f80303;
+  margin-bottom: 10px;
+}
+
+.board button {
+  padding: 8px 12px;
+  margin: 15px;
+  background: transparent;
+  border: 2px solid #0c0c0c;
+  color: #f80303;
+  width: 100px;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.board button:hover {
+  background: #eeeeee;
+  color: #222;
+}
+
+.board .game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border: blue;
+}
+
+.turn {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  width: fit-content;
+  position: relative;
+  border-radius: 10px;
+}
+
+.turn .square, .winner .square {
+  width: 70 px;
+  height: 70px;
+  pointer-events: none;
+  border-color: transparent;
+}
+
+.square.is-selected {
+  color: #020202;
+  background: #09f;
+}
+
+.winner {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.winner .text {
+  color: black;
+  background: white;
+  width: 320px;
+  height: 300px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.winner .win {
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.square {
+  color: #020202;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #0f0f0f;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 48px;
+}
